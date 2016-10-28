@@ -3,6 +3,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.0-beta.3/angular-ui-router.min.js"></script>
     <script src="app.js"></script>
@@ -10,7 +11,26 @@
     <meta charset="UTF-8">
 </head>
 
-<body>
-    <h1>testing</h1>
+<body ng-controller="WalletController">
+    <div id="fullBox">
+        <section id="topRow">
+            <section id="walletMaker">
+                <h2>My Wallets</h2>
+                <i class="fa fa-plus fa-3x" aria-hidden="true"></i>
+            </section>
+            <section id="currentBalance">
+                <h2>Current Balance</h2>
+                <h2>$729.00</h2>
+            </section>
+        </section>
+        <section id="bottomRow">
+            <section id="leftColumn">
+                <h2>testing</h2>
+            </section>
+            <section id="rightColumn">
+                <h2>testing</h2>
+            </section>
+        </section>
+    </div>
 </body>
 </html>

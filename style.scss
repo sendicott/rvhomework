@@ -3,3 +3,62 @@
 @include foundation-global-styles;
 @include foundation-grid;
 
+$bkgrnd1-color: #f2f2f2;
+$bkgrnd2-color: #ffffff;
+$darktext-color: #000000;
+$lighttext-color: #f2f2f2;
+$topheight: 100px;
+
+body {
+    background-color: #ffcc66;
+
+    #fullBox {
+        margin: 2%;
+        @include grid-row(12);
+
+        #topRow {
+            @include grid-column(12);
+
+            h2 {
+                color: $darktext-color;
+            }
+
+            #walletMaker {
+                @include grid-column(5);
+                background-color: $bkgrnd1-color;
+                display: inline-flex;
+                justify-content: space-between;
+                align-items: center;
+                height: 150px;
+                padding-left: 50px;
+            }
+
+            #currentBalance {
+                @include grid-column(7);
+                background-color: $bkgrnd2-color;
+                display: inline-flex;
+                justify-content: space-between;
+                align-items: center;
+                height: 150px;
+                border-bottom: 2px solid $bkgrnd1-color;
+
+            }
+        }
+
+        #bottomRow {
+            @include grid-column(12);
+
+            #leftColumn {
+                @include grid-column(5);
+                background-color: $bkgrnd1-color;
+                height: 400px;
+            }
+
+            #rightColumn {
+                @include grid-column(7);
+                background-color: $bkgrnd2-color;
+                height: 400px;
+            }
+        }
+    }
+}
