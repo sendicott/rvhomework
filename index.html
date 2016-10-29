@@ -24,10 +24,25 @@
         </section>
         <section id="bottomRow">
             <section id="leftColumn">
-                <div ng-repeat="card in cardArray" ng-click="find{{ card.click }}()">
+                <!--<div ng-repeat="card in cardArray" ng-click="find{{ card.click }}()">
                     <i class="fa {{ card.icon }} fa-3x" aria-hidden="true"></i>
                     <p id="cardNumber">{{ card.number }}</p>
                     <p id="validText">Valid Thru: {{ card.valid }}</p>
+                </div>-->
+                <div ng-click="findVisa()">
+                    <i class="fa fa-cc-visa fa-3x" aria-hidden="true"></i>
+                    <p id="cardNumber">**** **** **** 2562</p>
+                    <p id="validText">Valid Thru: 12/17</p>
+                </div>
+                <div ng-click="findAmex()">
+                    <i class="fa fa-cc-amex fa-3x" aria-hidden="true"></i>
+                    <p id="cardNumber">**** ****** 21001</p>
+                    <p id="validText">Valid Thru: 07/19</p>
+                </div>
+                <div ng-click="findMaster()">
+                    <i class="fa fa-cc-mastercard fa-3x" aria-hidden="true"></i>
+                    <p id="cardNumber">**** **** **** 8335</p>
+                    <p id="validText">Valid Thru: 09/17</p>
                 </div>
             </section>
             <section id="rightColumn">

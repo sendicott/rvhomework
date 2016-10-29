@@ -1,37 +1,43 @@
 let app = angular.module('WalletApp', []);
 
 app.controller("WalletController", function ($scope, WalletService) {
-    $scope.cardArray = [
-        {
-            icon: "fa-cc-visa",
-            number: "**** **** **** 2562",
-            valid: "12/17",
-            click: "Visa",
-        },
-        {
-            icon: "fa-cc-amex",
-            number: "**** ****** 21001",
-            valid: "07/19",
-            click: "Amex",
-        },
-        {
-            icon: "fa-cc-mastercard",
-            number: "**** **** **** 8335",
-            valid: "09/17",
-            click: "Master",
-        },
-    ];
+    // $scope.cardArray = [
+    //     {
+    //         icon: "fa-cc-visa",
+    //         number: "**** **** **** 2562",
+    //         valid: "12/17",
+    //         click: "Visa",
+    //     },
+    //     {
+    //         icon: "fa-cc-amex",
+    //         number: "**** ****** 21001",
+    //         valid: "07/19",
+    //         click: "Amex",
+    //     },
+    //     {
+    //         icon: "fa-cc-mastercard",
+    //         number: "**** **** **** 8335",
+    //         valid: "09/17",
+    //         click: "Master",
+    //     },
+    // ];
+
     $scope.findVisa = function() {
-        console.log("gasp!");
+        $scope.transactionArray = "";
+        $scope.transactionArray = WalletService.getVisa();
     }
+
     $scope.findAmex = function() {
-        console.log("golly!");
+        $scope.transactionArray = "";
+        $scope.transactionArray = WalletService.getAmex();
     }
+
     $scope.findMaster = function() {
-        console.log("gee!");
+        $scope.transactionArray = "";
+        $scope.transactionArray = WalletService.getMaster();
     }
     
-    $scope.transactionArray = WalletService.getMaster();
+    // $scope.transactionArray = WalletService.getMaster();
 });
 
 app.factory("WalletService", function() {
