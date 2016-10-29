@@ -2,21 +2,20 @@
 
 <html>
 <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.0-beta.3/angular-ui-router.min.js"></script>
     <script src="app.js"></script>
     <title>My Wallets</title>
     <meta charset="UTF-8">
 </head>
 
-<body ng-controller="WalletController">
-    <div id="fullBox">
+<body ng-app="WalletApp">
+    <div id="fullBox" ng-controller="WalletController">
         <section id="topRow">
             <section id="walletMaker">
                 <h2>My Wallets</h2>
-                <i class="fa fa-plus fa-3x" aria-hidden="true"></i>
+                <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
             </section>
             <section id="currentBalance">
                 <h2>Current Balance</h2>
@@ -25,10 +24,27 @@
         </section>
         <section id="bottomRow">
             <section id="leftColumn">
-                <h2>testing</h2>
+                <div ng-repeat="card in cardArray" ng-click="find{{ card.click }}()">
+                    <i class="fa {{ card.icon }} fa-3x" aria-hidden="true"></i>
+                    <p id="cardNumber">{{ card.number }}</p>
+                    <p id="validText">Valid Thru: {{ card.valid }}</p>
+                </div>
             </section>
             <section id="rightColumn">
-                <h2>testing</h2>
+                <div class="transactionList" ng-repeat="transaction in transactionArray">
+                    <div>
+                        <p id="operator">{{ transaction.operator }}</p>
+                    </div>
+                    <div id="transactionDetails">
+                        <h3>{{ transaction.title }}</h3>
+                        <p>{{ transaction.category }}</p>
+                        <p>{{ transaction.number }}</p>
+                        <p>{{ transaction.date }}</p>
+                    </div>
+                    <div>
+                        <p class="{{ transaction.divClass }}">{{ transaction.cost }}</p>
+                    </div>
+                </div>
             </section>
         </section>
     </div>

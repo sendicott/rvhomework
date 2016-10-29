@@ -51,13 +51,96 @@ body {
             #leftColumn {
                 @include grid-column(5);
                 background-color: $bkgrnd1-color;
-                height: 400px;
+                height: 550px;
+                overflow-y: scroll;
+
+                div {
+                    border: 1px solid lightgray;
+                    background-color: $bkgrnd2-color;
+                    width: 75%;
+                    margin: 0px auto 20px auto;
+                    padding: 10px 10px 5px 15px;
+                    border-radius: 5px;
+
+                    &:hover {
+                        border: solid 3px #48a0dc;
+                        cursor: pointer;
+                    }
+
+                    p {
+                        font-size: 1.4em;
+                        margin: 10px 0 0 0;
+                    }
+
+                    #cardNumber {
+                        letter-spacing: 3px;
+                    }
+
+                    #validText {
+                        color: gray;
+                    }
+
+                    .fa-cc-visa {
+                        color: #48a0dc;
+                    }
+
+                    .fa-cc-mastercard {
+                        color: #e6e6e6;
+                        background-color: #ffcc66;
+                    }
+
+                    .fa-cc-amex {
+                        color: #48a0dc;
+                    }
+                }
             }
 
             #rightColumn {
                 @include grid-column(7);
                 background-color: $bkgrnd2-color;
-                height: 400px;
+                height: 550px;
+                text-align: center;
+
+                .transactionList {
+                    display: inline-flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 80%;
+                    padding: 10px;
+
+                    #transactionDetails {
+                        text-align: left;
+
+                        h3 {
+                            margin-bottom: 0;
+                        }
+
+                        p {
+                            display: inline-block;
+                            color: gray;
+                            margin-top: 0;
+                        }
+                    }
+
+                    #operator {
+                        border: 1px solid gray;
+                        width: 25px;
+                        height: 25px;
+                        border-radius: 50%;
+                        padding-bottom: 10px 8px 0 8px;
+                        font-weight: 800;
+                    }
+
+                    .gain {
+                        color: #ffcc66;
+                        font-weight: 700;
+                    }
+
+                    .loss {
+                        color: #48a0dc;
+                        font-weight: 700;
+                    }
+                }
             }
         }
     }
