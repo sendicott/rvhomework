@@ -145,6 +145,26 @@ app.factory("WalletService", function() {
             date: "14 February, 2016",
             cost: "10.70",
         },
+        {
+            card: "visa",
+            divClass: "gain",
+            operator: "+",
+            title: "Brought home the bi-weekly bacon",
+            category: "Salary",
+            number: "#43156",
+            date: "14 March, 2016",
+            cost: "1500.00",
+        },
+        {
+            card: "visa",
+            divClass: "gain",
+            operator: "+",
+            title: "Bi-weekly bacon again",
+            category: "Salary",
+            number: "#43157",
+            date: "28 March, 2016",
+            cost: "1500.00",
+        },
     ];
 
     return {

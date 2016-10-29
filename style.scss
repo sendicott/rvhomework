@@ -100,6 +100,7 @@ body {
                 background-color: $bkgrnd2-color;
                 height: 550px;
                 text-align: center;
+                overflow-y: scroll;
 
                 .transactionList {
                     display: inline-flex;
@@ -110,6 +111,7 @@ body {
 
                     #transactionDetails {
                         text-align: left;
+                        width: 350px;
 
                         h3 {
                             margin-bottom: 0;
@@ -119,6 +121,7 @@ body {
                             display: inline-block;
                             color: gray;
                             margin-top: 0;
+                            margin-bottom: 0;
                         }
                     }
 
