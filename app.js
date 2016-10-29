@@ -30,12 +30,12 @@ app.controller("WalletController", function ($scope, WalletService) {
         let limitedArray = WalletService.getVisa();
         for (let i = 0; i < limitedArray.length; i++) {
             if (limitedArray[i].divClass === "gain") {
-                amount = amount + parseInt(limitedArray[i].cost);     
+                amount = amount + parseFloat(limitedArray[i].cost);     
             } else {
-                amount = amount - parseInt(limitedArray[i].cost);
+                amount = amount - parseFloat(limitedArray[i].cost);
             }
         }
-        $scope.balance = amount;
+        $scope.balance = amount.toFixed(2);
     }
 
     $scope.findAmex = function() {
@@ -46,28 +46,28 @@ app.controller("WalletController", function ($scope, WalletService) {
         let limitedArray = WalletService.getAmex();
         for (let i = 0; i < limitedArray.length; i++) {
             if (limitedArray[i].divClass === "gain") {
-                amount = amount + parseInt(limitedArray[i].cost);     
+                amount = amount + parseFloat(limitedArray[i].cost);     
             } else {
-                amount = amount - parseInt(limitedArray[i].cost);
+                amount = amount - parseFloat(limitedArray[i].cost);
             }
         }
-        $scope.balance = amount;
+        $scope.balance = amount.toFixed(2);
     }
 
     $scope.findMaster = function() {
         $scope.transactionArray = "";
         $scope.balance = "";
         $scope.transactionArray = WalletService.getMaster();
-        let amount = 0;
+        let amount = 0.00;
         let limitedArray = WalletService.getMaster();
         for (let i = 0; i < limitedArray.length; i++) {
             if (limitedArray[i].divClass === "gain") {
-                amount = amount + parseInt(limitedArray[i].cost);     
+                amount = amount + parseFloat(limitedArray[i].cost);     
             } else {
-                amount = amount - parseInt(limitedArray[i].cost);
+                amount = amount - parseFloat(limitedArray[i].cost);
             }
         }
-        $scope.balance = amount;
+        $scope.balance = amount.toFixed(2);
     }
     
     // $scope.transactionArray = WalletService.getMaster();
@@ -84,6 +84,26 @@ app.factory("WalletService", function() {
             number: "#453551",
             date: "11 July, 2016",
             cost: "184.67",
+        },
+        {
+            card: "amex",
+            divClass: "gain",
+            operator: "+",
+            title: "First place in unicycle triathlon",
+            category: "Health & Fitness",
+            number: "#56102",
+            date: "11 December, 2016",
+            cost: "1111.11",
+        },
+        {
+            card: "amex",
+            divClass: "loss",
+            operator: "-",
+            title: "10 lbs. of pig ears",
+            category: "Petcare",
+            number: "#45290",
+            date: "11 June, 2016",
+            cost: "341.87",
         },
         {
             card: "master",
