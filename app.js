@@ -24,17 +24,50 @@ app.controller("WalletController", function ($scope, WalletService) {
 
     $scope.findVisa = function() {
         $scope.transactionArray = "";
+        $scope.balance = "";
         $scope.transactionArray = WalletService.getVisa();
+        let amount = 0;
+        let limitedArray = WalletService.getVisa();
+        for (let i = 0; i < limitedArray.length; i++) {
+            if (limitedArray[i].divClass === "gain") {
+                amount = amount + parseInt(limitedArray[i].cost);     
+            } else {
+                amount = amount - parseInt(limitedArray[i].cost);
+            }
+        }
+        $scope.balance = amount;
     }
 
     $scope.findAmex = function() {
         $scope.transactionArray = "";
+        $scope.balance = "";
         $scope.transactionArray = WalletService.getAmex();
+        let amount = 0;
+        let limitedArray = WalletService.getAmex();
+        for (let i = 0; i < limitedArray.length; i++) {
+            if (limitedArray[i].divClass === "gain") {
+                amount = amount + parseInt(limitedArray[i].cost);     
+            } else {
+                amount = amount - parseInt(limitedArray[i].cost);
+            }
+        }
+        $scope.balance = amount;
     }
 
     $scope.findMaster = function() {
         $scope.transactionArray = "";
+        $scope.balance = "";
         $scope.transactionArray = WalletService.getMaster();
+        let amount = 0;
+        let limitedArray = WalletService.getMaster();
+        for (let i = 0; i < limitedArray.length; i++) {
+            if (limitedArray[i].divClass === "gain") {
+                amount = amount + parseInt(limitedArray[i].cost);     
+            } else {
+                amount = amount - parseInt(limitedArray[i].cost);
+            }
+        }
+        $scope.balance = amount;
     }
     
     // $scope.transactionArray = WalletService.getMaster();
@@ -50,7 +83,7 @@ app.factory("WalletService", function() {
             category: "Health & Fitness",
             number: "#453551",
             date: "11 July, 2016",
-            cost: "$184.67",
+            cost: "184.67",
         },
         {
             card: "master",
@@ -60,7 +93,7 @@ app.factory("WalletService", function() {
             category: "Utilities",
             number: "#24562",
             date: "3 August, 2016",
-            cost: "$68.33",
+            cost: "68.33",
         },
         {
             card: "master",
@@ -70,7 +103,7 @@ app.factory("WalletService", function() {
             category: "Odd Jobs",
             number: "#4761",
             date: "3 December, 2016",
-            cost: "$75.00",
+            cost: "75.00",
         },
         {
             card: "visa",
@@ -80,7 +113,7 @@ app.factory("WalletService", function() {
             category: "Miscellaneous",
             number: "#152",
             date: "11 January, 2016",
-            cost: "$700.00",
+            cost: "700.00",
         },
         {
             card: "visa",
@@ -90,7 +123,7 @@ app.factory("WalletService", function() {
             category: "Groceries",
             number: "#153",
             date: "14 February, 2016",
-            cost: "$10.70",
+            cost: "10.70",
         },
     ];
 

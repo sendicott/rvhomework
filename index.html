@@ -19,7 +19,7 @@
             </section>
             <section id="currentBalance">
                 <h2>Current Balance</h2>
-                <h2>$729.00</h2>
+                <h2>${{ balance }}</h2>
             </section>
         </section>
         <section id="bottomRow">
@@ -57,7 +57,7 @@
                         <p>{{ transaction.date }}</p>
                     </div>
                     <div>
-                        <p class="{{ transaction.divClass }}">{{ transaction.cost }}</p>
+                        <p class="{{ transaction.divClass }}">${{ transaction.cost }}</p>
                     </div>
                 </div>
             </section>
