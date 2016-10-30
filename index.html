@@ -15,11 +15,11 @@
         <section id="topRow">
             <section id="walletMaker">
                 <h2>My Wallets</h2>
-                <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                <i class="fa fa-plus fa-2x" aria-hidden="true" ng-click="createCard()"></i>
             </section>
             <section id="currentBalance">
-                <h2>Current Balance</h2>
-                <h2>${{ balance }}</h2>
+                <h2 id="balanceText">Current Balance</h2>
+                <h2 id="balanceNumber">${{ balance }}</h2>
             </section>
         </section>
         <section id="bottomRow">

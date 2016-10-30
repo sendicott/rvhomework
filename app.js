@@ -22,6 +22,24 @@ app.controller("WalletController", function ($scope, WalletService) {
     //     },
     // ];
 
+    $scope.createCard = function() {
+        alert("Stop it. Three is enough.");
+    };
+
+    $scope.transactionArray = "";
+    $scope.balance = "";
+    $scope.transactionArray = WalletService.getVisa();
+    let amount = 0;
+    let firstArray = WalletService.getVisa();
+    for (let i = 0; i < firstArray.length; i++) {
+        if (firstArray[i].divClass === "gain") {
+            amount = amount + parseFloat(firstArray[i].cost);     
+        } else {
+            amount = amount - parseFloat(firstArray[i].cost);
+        }
+    }
+    $scope.balance = amount.toFixed(2);
+
     $scope.findVisa = function() {
         $scope.transactionArray = "";
         $scope.balance = "";
@@ -99,7 +117,7 @@ app.factory("WalletService", function() {
             card: "amex",
             divClass: "loss",
             operator: "-",
-            title: "10 lbs. of pig ears",
+            title: "10 lbs. of pig ears (for dog)",
             category: "Petcare",
             number: "#45290",
             date: "11 June, 2016",
@@ -157,13 +175,43 @@ app.factory("WalletService", function() {
         },
         {
             card: "visa",
-            divClass: "gain",
+            divClass: "loss",
+            operator: "-",
+            title: "Donated to a dinosaur park",
+            category: "Investments",
+            number: "#24563",
+            date: "13 April, 2016",
+            cost: "2500.00",
+        },
+        {
+            card: "visa",
+            divClass: "loss",
+            operator: "-",
+            title: "Avett Brothers Concert",
+            category: "Entertainment",
+            number: "#222",
+            date: "28 August, 2016",
+            cost: "300.00",
+        },
+        {
+            card: "visa",
+            divClass: "loss",
+            operator: "-",
+            title: "Dog training lessons",
+            category: "Petcare",
+            number: "#654",
+            date: "28 October, 2016",
+            cost: "400.00",
+        },
+        {
+            card: "visa",
+            divClass: "loss",
             operator: "+",
-            title: "Bi-weekly bacon again",
-            category: "Salary",
-            number: "#43157",
-            date: "28 March, 2016",
-            cost: "1500.00",
+            title: "Completed wooden bowl set",
+            category: "Kitchenware",
+            number: "#9544",
+            date: "11 November, 2016",
+            cost: "75.00",
         },
     ];
 

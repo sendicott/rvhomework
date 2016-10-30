@@ -31,6 +31,19 @@ body {
                 align-items: center;
                 height: 150px;
                 padding-left: 50px;
+
+                h2 {
+                    margin-left: 50px;
+                }
+
+                .fa-plus {
+                    cursor: pointer;
+                    margin-right: 55px;
+
+                    &:hover {
+                        color: #ffcc66;
+                    }
+                }
             }
 
             #currentBalance {
@@ -42,6 +55,13 @@ body {
                 height: 150px;
                 border-bottom: 2px solid $bkgrnd1-color;
 
+                #balanceText {
+                    margin-left: 60px;
+                }
+
+                #balanceNumber {
+                    margin-right: 60px;
+                }
             }
         }
 
